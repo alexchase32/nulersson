@@ -1,0 +1,23 @@
+# Enable PHP processing
+AddType application/x-httpd-php .php
+
+# Set default index file
+DirectoryIndex index.html index.php
+
+# Prevent directory listing
+Options -Indexes
+
+# Create lessons directory if it doesn't exist
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^lessons$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^lessons$ - [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>

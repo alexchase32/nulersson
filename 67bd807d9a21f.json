@@ -1,0 +1,36 @@
+{
+    "name": "corto",
+    "date": "2025-03-26",
+    "blocks": [
+        {
+            "id": 1740472333843,
+            "type": "spelling",
+            "config": {
+                "instructions": "pon los acentos donde sea necesario",
+                "exercises": [
+                    {
+                        "word": "CUIDAR",
+                        "missingIndices": [
+                            1,
+                            2
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1740472465799,
+            "type": "singlephrase",
+            "config": {
+                "instructions": "speak in spanish",
+                "phrases": [
+                    {
+                        "prompt": "\u00bfqu\u00e9 compraste?",
+                        "answer": "compr\u00e9 pan y leche"
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "67bd807d9a21f"
+}

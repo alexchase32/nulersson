@@ -1,0 +1,630 @@
+/* Common Styles */
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* Teacher View Styles */
+.draggable {
+  cursor: move;
+}
+
+.drop-zone {
+  min-height: 300px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.drop-zone.drag-over {
+  background-color: #e9ecef;
+  border-color: #6c757d;
+}
+
+.learning-block {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.learning-block:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Student View Styles */
+#lessonSelectionContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#lessonSelectionContainer .card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: none;
+}
+
+#lessonContentContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 5px;
+}
+
+/* Exercise-specific styles */
+.hotspot {
+  width: 30px;
+  height: 30px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.hotspot:hover {
+  transform: scale(1.2);
+}
+
+.hotspot.correct {
+  background: #28a745;
+}
+
+.hotspot.incorrect {
+  background: #dc3545;
+}
+
+.hotspot-marker {
+  transition: all 0.3s;
+}
+
+.hotspot-marker:hover {
+  transform: scale(1.2);
+}
+
+/* Card flip animation for flashcards */
+.card-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 250px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+#flashcard {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+  position: relative;
+}
+
+#flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.card-front {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.card-back {
+  background-color: #e9ecef;
+  transform: rotateY(180deg);
+  border: 1px solid #dee2e6;
+}
+
+/* Highlight words exercise styles */
+.highlight-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.highlight-word {
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.highlight-word.selected {
+  background-color: #ffd700;
+}
+
+.highlight-word.correct {
+  background-color: #90EE90;
+}
+
+.highlight-word.incorrect {
+  background-color: #FFB6C1;
+}
+
+/* Image click exercise styles */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.source-image {
+  width: 120px;
+  height: 180px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.source-image.selected {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.target-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.target-box {
+  width: 120px;
+  height: 180px;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.target-box.filled {
+  border-style: solid;
+  border-color: #28a745;
+}
+
+.target-box.current {
+  border-color: #007bff;
+  border-style: solid;
+}
+
+/* Add dialogue exercise styles */
+.dialogue-container {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.dialogue-instructions {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.speaker-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.speaker-left, .speaker-right {
+  width: 45%;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mic-btn {
+  background: none;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mic-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.mic-btn:disabled {
+  border-color: #6c757d;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.answer-text {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 40px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+}
+
+.speaker-box.correct .answer-text {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.speaker-box.incorrect .answer-text {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Single Phrase Speaking Exercise styles */
+.single-phrase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.phrase-question {
+  background-color: #bef264;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.phrase-transcription {
+  border: 2px solid #bef264;
+  padding: 1rem;
+  width: 300px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-radius: 0.375rem;
+  background-color: rgba(190, 242, 100, 0.1);
+  font-size: 1.1rem;
+}
+
+.phrase-mic-btn {
+  background-color: #bef264;
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.phrase-mic-btn:hover {
+  background-color: #a8e04d;
+}
+
+/* Add styles for sentence matching exercise */
+.green-card {
+  background-color: #bef264;
+  color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.green-card.selected {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.white-card {
+  background-color: white;
+  border: 2px solid #bef264;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.white-card:hover {
+  transform: scale(1.02);
+}
+
+.white-card.correct {
+  background-color: rgba(190, 242, 100, 0.1);
+  border-color: #bef264;
+}
+
+.white-card.incorrect {
+  background-color: rgba(255, 68, 68, 0.1);
+  border-color: #ff4444;
+}
+
+/* Picture Selection Exercise styles */
+.quiz-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-header {
+  background-color: #bef264;
+  color: #000;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.quiz-instructions {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.verb-display {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin: 0 auto 24px;
+  max-width: 600px;
+  place-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.images-container img.selected {
+  border-color: #bef264;
+}
+
+.submit-btn {
+  background-color: #bef264;
+  color: #000;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 32px;
+  transition: background-color 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-btn:hover {
+  background-color: #a3e635;
+}
+
+.completed-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 24px 0;
+  text-align: center;
+}
+
+/* Accent exercise styles */
+.letter {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s;
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.letter:hover {
+  background-color: rgba(190, 242, 100, 0.3);
+}
+
+.letter.selected {
+  background-color: #bef264;
+}
+
+.letter.correct {
+  color: #166534;
+  font-weight: bold;
+}
+
+.letter.wrong {
+  color: #dc2626;
+}
+
+.letter-preview {
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+.letter-preview:hover {
+  background-color: rgba(190, 242, 100, 0.3);
+}
+
+.preview-area {
+  font-size: 1.2em;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+/* Spelling exercise styles */
+.spelling-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.spelling-container .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.word-input-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.word-preview {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin: 1rem 0;
+}
+
+.spelling-container .word {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  letter-spacing: 0.1em;
+}
+
+.spelling-container .options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.spelling-container .option {
+  background-color: #bef264;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.spelling-container .option:hover {
+  background-color: #a8e04d;
+}
+
+.spelling-container .word.correct {
+  color: #166534;
+}
+
+.spelling-container .word.incorrect {
+  color: #dc2626;
+}
+
+/* Exercise progress indicator */
+#exerciseProgress {
+  background-color: #e9ecef;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .images-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .speaker-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .speaker-left, .speaker-right {
+    width: 100%;
+  }
+}
